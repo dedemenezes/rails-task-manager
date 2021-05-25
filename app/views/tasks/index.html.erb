@@ -1,6 +1,11 @@
 <% @tasks.each do |task| %>
   <% done = task.completed ? "X" : " " %>
-  <ul>
-    <li><%= "[#{done}] - #{task.title}" %></li>
-  </ul>
+  <%= link_to task_path(task.id) do %>
+      <div class="flash alert alert-dismissible fade show" role="alert">
+    <span> <%= task.title %>.</span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div> 
+  <% end %>
 <% end %>
