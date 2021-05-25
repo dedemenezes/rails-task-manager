@@ -1,0 +1,6 @@
+<% @tasks.each do |task| %>
+  <% done = task.completed ? "X" : " " %>
+  <ul>
+    <li><%= "[#{done}] - #{task.title}" %></li>
+  </ul>
+<% end %>
